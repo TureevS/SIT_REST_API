@@ -1,4 +1,6 @@
-#[Лабораторная работа№2](#lab2)
+[Лабораторная работа№1](#lab1)
+[Лабораторная работа№2](#lab2)
+<a name="lab1"></a>
 #Лабораторная работа №1
 ###Регистрация пользователя
 ![1](https://github.com/TureevS/SIT_REST_API/blob/master/lab1_screens/1.PNG)
@@ -12,5 +14,5 @@
 ###Удаление задачи
 ![6](https://github.com/TureevS/SIT_REST_API/blob/master/lab1_screens/6.PNG)
 ![7](https://github.com/TureevS/SIT_REST_API/blob/master/lab1_screens/7.PNG)
-#Лабораторная работа №2
 <a name="lab2"></a>
+#Лабораторная работа №2
