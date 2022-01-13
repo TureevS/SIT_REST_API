@@ -6,6 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, \
     get_jwt_identity
 from config import Config
+import containers
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
@@ -190,6 +192,12 @@ def file_operation(name):
         db.session.commit()
         return {'status': 'success'}
     return {'Error': 'Check request method'}
+
+
+@app.route('/health')
+def health():
+    """Метод"""
+    return {'APP_ENV': containers.ApplicationContainer.service.get()}
 
 
 if __name__ == '__main__':
