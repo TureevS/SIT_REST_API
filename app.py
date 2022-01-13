@@ -21,20 +21,6 @@ class Users(db.Model):
     username = db.Column(db.String(30), primary_key=True)
     password = db.Column(db.String(50), nullable=False)
 
-    def get_token(self, expire_time=24):
-        """Метод создания и получения токена доступа"""
-        token = create_access_token(identity=self.username,
-                                    expires_delta=timedelta(expire_time))
-        return token
-
-    @classmethod
-    def authentication(cls, username, password):
-        """Метод для аутентификации пользователя"""
-        client = cls.query.filter(cls.username == username).one()
-        if not password == client.password:
-            raise Exception("error")
-        return client
-
 
 class Todolist(db.Model):
     """Создание таблицы Todolist базы данных"""
@@ -52,6 +38,21 @@ class Files(db.Model):
     username = db.Column(db.String(30), db.ForeignKey('users.username'))
 
 
+def get_token(username, expire_time=24):
+    """Метод создания и получения токена доступа"""
+    token = create_access_token(identity=username,
+                                expires_delta=timedelta(expire_time))
+    return token
+
+
+def auth(username, password):
+    """Метод для аутентификации пользователя"""
+    client = Users.query.filter(Users.username == username).one()
+    if not password == client.password:
+        raise Exception("error")
+    return client
+
+
 @app.route('/')
 def index():
     """Метод показа главной страницы"""
@@ -67,12 +68,11 @@ def user():
         users = Users(username=username, password=password)
         db.session.add(users)
         db.session.commit()
-        token = users.get_token()
+        token = get_token(users.username)
         return {'token': token}
     if request.method == 'GET':
         return {'Sign': 'Up'}
     return {'Error': 'Check request method'}
-
 
 
 @app.route('/authentication', methods=['POST', 'GET'])
@@ -81,8 +81,8 @@ def authentication():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        users = Users.authentication(username, password)
-        token = users.get_token()
+        users = auth(username, password)
+        token = get_token(users.username)
         return {'token': token}
     if request.method == 'GET':
         return {'Sign': 'In'}
