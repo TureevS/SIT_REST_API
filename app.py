@@ -152,6 +152,7 @@ def files():
     if request.method == 'POST':
         file = request.files['file']
         data = file.read()
+        print(data)
         size = str(len(data)) + ' byte'
         new_file = Files(filenames=file.filename, filesize=size,
                          data=data, username=username)
