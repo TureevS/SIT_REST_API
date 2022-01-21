@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, \
     get_jwt_identity
 from config import Config
-import containers
+from containers import ApplicationContainer
 
 
 app = Flask(__name__)
@@ -198,7 +198,7 @@ def file_operation(name):
 @app.route('/health')
 def health():
     """Метод"""
-    return {'APP_ENV': containers.ApplicationContainer.service.get()}
+    return {'APP_ENV': ApplicationContainer.service.get()}
 
 
 if __name__ == '__main__':

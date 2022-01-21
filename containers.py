@@ -1,7 +1,7 @@
-import os
 from dependency_injector import containers
 from service import Service
+from config import Config
 
 
 class ApplicationContainer(containers.DeclarativeContainer):
-    service = Service(os.environ["FLASK_ENV"])
+    service = Service(Config.FLASK_ENV)
