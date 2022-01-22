@@ -2,6 +2,7 @@
 ### [Лабораторная работа №1](#lab1)
 ### [Лабораторная работа №3](#lab3)
 ### [Лабораторная работа №5](#lab5)
+### [Лабораторная работа №6](#lab6)
 
 <a name="lab1"></a>
 # Лабораторная работа №1
@@ -57,3 +58,10 @@ Pylint — статический инструмент для анализа к�
 ![20](https://github.com/TureevS/SIT_REST_API/blob/master/lab5_screens/8.PNG)
 ### После исправления ошибок
 ![21](https://github.com/TureevS/SIT_REST_API/blob/master/lab5_screens/9.PNG)
+
+<a name="lab6"></a>
+# Лабораторная работа №6
+### Development
+![22](https://github.com/TureevS/SIT_REST_API/blob/master/lab6_screens/1.PNG)
+### Production
+![23](https://github.com/TureevS/SIT_REST_API/blob/master/lab6_screens/2.PNG)
