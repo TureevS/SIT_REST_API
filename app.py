@@ -202,5 +202,11 @@ def health():
     return {'APP_ENV': container.service.get()}
 
 
+@app.route('/lab7')
+def hello():
+    """Метод hello"""
+    return {'Hello': 'World!'}
+
+
 if __name__ == '__main__':
     app.run(debug=True)
