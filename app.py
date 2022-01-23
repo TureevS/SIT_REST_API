@@ -205,7 +205,7 @@ def health():
 @app.route('/lab7')
 def hello():
     """Метод hello"""
-    return {'Hello': 'World!'}
+    return {'message': 'HelloWorld!'}
 
 
 if __name__ == '__main__':
