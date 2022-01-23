@@ -72,4 +72,4 @@ Pylint — статический инструмент для анализа к�
 ### Development
 ![24](https://github.com/TureevS/SIT_REST_API/blob/master/lab7_screens/1.PNG)
 ### Production
-![25](https://github.com/TureevS/SIT_REST_API/blob/master/lab7_screens/1.PNG)
+![25](https://github.com/TureevS/SIT_REST_API/blob/master/lab7_screens/2.PNG)
