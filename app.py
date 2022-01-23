@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object(Config)
+container = ApplicationContainer()
 
 db = SQLAlchemy(app)
 jwt = JWTManager(app)
@@ -198,7 +199,13 @@ def file_operation(name):
 @app.route('/health')
 def health():
     """Метод"""
-    return {'APP_ENV': ApplicationContainer.service.get()}
+    return {'APP_ENV': container.service.get()}
+
+
+@app.route('/lab7')
+def func():
+    """Метод"""
+    return {'Hello': 'World!'}
 
 
 if __name__ == '__main__':
