@@ -10,7 +10,7 @@ from containers import ApplicationContainer
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{Config.dbname}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object(Config)
 container = ApplicationContainer()
@@ -200,12 +200,6 @@ def file_operation(name):
 def health():
     """Метод"""
     return {'APP_ENV': container.service.get()}
-
-
-@app.route('/lab7')
-def func():
-    """Метод Hello"""
-    return {'Hello': 'World!'}
 
 
 if __name__ == '__main__':
