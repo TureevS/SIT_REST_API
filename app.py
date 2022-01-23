@@ -204,7 +204,7 @@ def health():
 
 @app.route('/lab7')
 def func():
-    """Метод"""
+    """Метод Hello"""
     return {'Hello': 'World!'}
 
 
