@@ -1,3 +1,3 @@
-#!/usr/bin/python
+#!/bin/bash
 
-print('HelloWorld!')
+echo "Hello World"
