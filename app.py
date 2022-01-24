@@ -210,7 +210,7 @@ def hello():
 
 @app.route('/lab8')
 def hello1():
-    return {'message': 'HelloW'}
+    return {'message': 'Hello'}
 
 
 if __name__ == '__main__':
