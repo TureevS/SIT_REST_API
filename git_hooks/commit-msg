@@ -1,4 +1,4 @@
-#!../venv/Scripts/activate
+#!/usr/bin/python3
 import re
 import sys
 
