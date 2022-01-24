@@ -1,4 +1,6 @@
 cd ../
+source venv/Scripts/activate
+pip freeze > requirements.txt
 git add -A
 git commit -m "update"
 git push origin master
