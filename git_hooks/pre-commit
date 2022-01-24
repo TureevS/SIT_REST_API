@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+Files=$(git diff-tree --no-commit-id --name-only HEAD)
+source venv/Scripts/activate
+
+for File in Files; do
+    echo $File
+    if [[ "$File" == *".py" ]]; then
+        $(black ${File})
+    fi
+done
