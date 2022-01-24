@@ -208,5 +208,10 @@ def hello():
     return {'message': 'HelloWorld!'}
 
 
+@app.route('/lab8')
+def hello1():
+    return {'message': 'Hello'}
+
+
 if __name__ == '__main__':
     app.run(debug=True)
