@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+import re
+import sys
+
+
+regex = r"\[[0-9]+\] [a-zA-Zа-яА-Я]"
+msg = open(sys.argv[1], "r").read()
+if not re.match(regex, msg):
+    print("Некорректный формат коммита!")
+    sys.exit(-1)
+
